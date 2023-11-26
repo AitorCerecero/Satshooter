@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador Digital Sat Pro</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        h1, h2 {
+            margin: 10px 0;
+        }
+
+        form {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cuenta encontrada</h1>
+
+    {% if provider %}
+        <p>Proveedor: {{ provider }}</p>
+        <p>Satélite: {{ satellite }}</p>
+        <img src="{{ logo_url }}" alt="Proveedor Logo">
+    {% else %}
+        <p>No se encontró información para el número de cuenta proporcionado.</p>
+    {% endif %}
+
+    <p><a href="/">Volver a la página principal</a></p>
+</body>
+</html>

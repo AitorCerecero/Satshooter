@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador Digital Sat Pro</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        h1, h2 {
+            margin: 10px 0;
+        }
+
+        form {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <img src="https://yt3.googleusercontent.com/XsU709u3RD99V6oxRobJv5IJO5Zz1N4sBNa18tPuezsy4-kaQJpCLb3NDYAOOQl08OkpXARwGQ=s900-c-k-c0x00ffffff-no-rj" alt="Ejemplo de Imagen" style="width: 150px; height: auto;">
+    <h1>Bienvenido al Servicio de Verificacion Digital Sat Pro</h1>
+    <h2>Técnico, ingresa el número de cuenta del cliente para reconocer su Proveedor y su satélite asignado</h2>
+
+    <form method="post" action="/">
+        <label for="account_number">Número de Cuenta:</label>
+        <input type="text" id="account_number" name="account_number" required>
+        <button type="submit">Verificar</button>
+    </form>
+
+    {% if provider %}
+        <h2>Resultado:</h2>
+        <p>Proveedor: {{ provider }}</p>
+        <p>Satélite: {{ satellite }}</p>
+        <img src="{{ logo_url }}" alt="Proveedor Logo">
+    {% endif %}
+</body>
+</html>
